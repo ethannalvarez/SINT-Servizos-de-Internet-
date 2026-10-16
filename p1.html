@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang = "es">
+<head>
+    <meta charset="UTF-8">
+    <title>Recomendación de TV</title>
+    <link rel="stylesheet" href="p1.css">
+</head>
+<body>
+    <form id="tvForm" action="https://alberto.gil.webs.uvigo.es/SINT/26-27/p1.php">
+        <fieldset>
+            <legend>Registro de Usuario</legend>
+            <label>Nombre y Apellido: <input type="text" name="cname" pattern="^[a-zA-ZáéíóúÁÉÍÓÚñÑ]{3,}\s[a-zA-ZáéíóúÁÉÍÓÚñÑ]{3,}$"></label><br>
+            <label>Login: <input type="text" id="clogin" name="clogin"></label><br>
+            <label>Contraseña: <input type="password" id="cpasswd" name="cpasswd"></label><br>
+            <label>DNI: <input type="text" id="cdni" name="cdni"></label><br>
+            <label>Email: <input type="email" name="cemail"></label><br>
+
+            <p>Rango de edad:</p>
+            <label><input type="radio" name="cage" value="<20"> Menor de 20></label>
+            <label><input type="radio" name="cage" value="20-40"> Entre 20 y 40</label>
+            <label><input type="radio" name="cage" value="40-65"> Entre 40 y 65</label>
+            <label><input type="radio" name="cage" value=">65"> Más de 65</label>
+
+            <p>Preferencias</p>
+            <div id="prefContainer">
+                <label><input type="checkbox" name="cprefs" value="informativos"> Informativos</label>
+                <label><input type="checkbox" name="cprefs" value="peliculas"> Películas</label>
+                <label><input type="checkbox" name="cprefs" value="deportes"> Deportes</label>
+                <label><input type="checkbox" name="cprefs" value="concursos"> Concursos</label>
+                <label><input type="checkbox" name="cprefs" value="musicales"> Musicales</label>
+            </div>
+
+            <button type="button" onclick="togglePrefs(true)">Marcar todas</button>
+            <button type="button" onclick="togglePrefs(false)">Desmarcar todas</button>
+            <br><br>
+
+            <label>Método:
+                <select id="cmethod" name="cmethod">
+                    <option value="GET">GET</option>
+                    <option value="POST">POST</option>
+                </select>
+            </label>
+
+            <label>Codificación:
+                <select id="cencoding" name="cencoding">
+                    <option value="application/x-www-for-urlencoded">URL-encoded</option>
+                    <option value="multipart/form-data">Multipart</option>
+                </select>
+            </label>
+
+            <input type="hidden" id="cbrowser" name="cbrowser">
+            <br><br>
+            <button type="reset">Restablecer</button>
+            <button type="submit">Enviar</button>
+        </fieldset>
+    </form>
+    <script src="p1.js"></script>
+</body>
+</html>

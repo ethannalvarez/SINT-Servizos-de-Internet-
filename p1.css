@@ -1,0 +1,33 @@
+/* Selector de elemento */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    padding: 20px;
+}
+
+/* Selector de id */
+#tvForm {
+    background: white;
+    padding: 25px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    max-width: 600px;
+}
+
+/* Selector de clase */
+.campo-error {
+    border: 2px solid red;
+}
+
+/* pseudo-clase */
+button:hover {
+    background-color: #e0e0e0;
+    cursor: pointer;
+}
+
+/* pseudo-elemento */
+legend::first-letter {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #2c3e50;
+}
