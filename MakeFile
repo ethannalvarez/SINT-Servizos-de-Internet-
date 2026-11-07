@@ -1,0 +1,22 @@
+# Rutas y dependencias
+# ATENCIÓN: Ajusta TOMCAT_LIB a la ruta real de tu Tomcat en el laboratorio
+TOMCAT_LIB = /ruta/a/tu/tomcat/lib/jakarta.servlet-api.jar
+OUT_DIR = ../webapps/WEB-INF/classes
+
+# Archivos fuente a compilar
+SOURCES = Canal.java Programa.java Participante.java DataModel.java FrontEnd.java Sint5P2.java
+
+# Regla por defecto
+all: compile
+
+# Regla de compilación
+compile:
+	@echo "=> Compilando código fuente..."
+	mkdir -p $(OUT_DIR)
+	javac -cp "$(TOMCAT_LIB)" -d $(OUT_DIR) $(SOURCES)
+	@echo "=> Clases generadas correctamente en $(OUT_DIR)/p2"
+
+# Regla para limpiar los binarios
+clean:
+	@echo "=> Eliminando clases compiladas..."
+	rm -rf $(OUT_DIR)/p2/*.class
